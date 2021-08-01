@@ -17,18 +17,22 @@ items.addEventListener("click", (e) => {
 
 // TODO: Create new item event Click or Enter key
 addBtn.addEventListener("click", () => {
-  createTodo(inputItem.value);
-  pushItemsIntoLS();
-});
-
-inputItem.addEventListener("keyup", (e) => {
-  if (e.keyCode === 13) {
+  if (inputItem.value != "") {
     createTodo(inputItem.value);
     pushItemsIntoLS();
   }
 });
 
-// ----------------------------------------------------------------------
+inputItem.addEventListener("keypress", (e) => {
+  if (e.keyCode === 13) {
+    if (inputItem.value != "") {
+      createTodo(inputItem.value);
+      pushItemsIntoLS();
+    }
+  }
+});
+
+// function 선언 ----------------------------------------------------------------------
 
 // delete & update Array
 function removeItemFromArray(itemText) {
