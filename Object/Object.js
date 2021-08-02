@@ -1,24 +1,11 @@
-function User(name, age) {
-  return {
-    name,
-    age,
-  };
-}
+const user = {
+  name: "kong",
+  age: 24,
+  location: "한국",
+};
 
-class Person {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
-  }
-}
-
-const kong = User("kong", 24);
-const ha = new Person("ha", 24);
-console.log(kong, ha);
-console.log("name" in kong);
-
-const arr = [1, 2, 3, 4];
-
-for (key in kong) {
-  console.log(key);
+for (key in user) {
+  console.log(key); // name, age, location
+  console.log(user[key]); // kong, 24, 한국
+  console.log(user.key); // undefined , undefined, undefined  -> for in 문은 string으로 반환하기 때문에 [] 방식을 사용해야함
 }
