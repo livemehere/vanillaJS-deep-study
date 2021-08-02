@@ -80,7 +80,7 @@ console.log(user.age); //undefined
 
 - `undefined`를 활용해서 찾을 수 도있지만, `value`값이 `undefined`일경우가 있을 수도 있기 때문에 정확하다고 볼수는 없다. 그래서 in 연산자를 사용한다
 
-````js
+```js
 const user = {
   name: "kong",
   age: 24,
