@@ -91,7 +91,7 @@ console.log(name in user); //true   'key in Object'
 console.log(name === undefined); // false 'name이 있기 때문에 false'
 console.log(login === undefined); // true  '존재하지 않는 property이기 때문에'
 console.log(location === undefined); // true 'location의 value값이 undefined이기 때문에 true' : 이경우가 모호한경우임
-```ㅎ
+```
 
 ## for(... in ...) 연산자로 key값 순회하기
 
