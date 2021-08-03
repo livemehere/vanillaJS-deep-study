@@ -1,9 +1,4 @@
-const user = {
-  name: "kong",
-  age: 24,
-  location: "한국",
-};
+const d1 = new Date("2021-11-30");
+const d2 = new Date("2021-08-03");
 
-const clone = Object.assign({}, user);
-
-console.log(user.name === clone.name); // true
+console.log(d1 - d2);
