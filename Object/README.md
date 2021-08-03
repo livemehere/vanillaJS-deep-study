@@ -109,4 +109,63 @@ for (key in user) {
   console.log(user[key]); // kong, 24, 한국
   console.log(user.key); // undefined , undefined, undefined  -> for in 문은 string으로 반환하기 때문에 [] 방식을 사용해야함
 }
-````
+```
+
+## 참조에의한 객체 복사
+
+- 객체는 `call by reference`이다
+- C언어로 치면 포인터가된다
+- 그래서 아래와 같이 복제를 한다면 같은 객체에 대해서 `참조값`이 복사가 된다
+
+```js
+let user = { name: "kong" };
+let admin = user;
+
+console.log(user === admin); // true
+```
+
+### 그럼 정말 객체를 복제하고싶다면?
+
+- `for..in` 을 사용하여 순회하여 직접복사
+
+```js
+const user = {
+  name: "kong",
+  age: 24,
+  location: "한국",
+};
+
+let clone = {};
+
+for (let key in user) {
+  clone[key] = user[key];
+}
+```
+
+- `Object.assign(객체,병합할객체,병합할객체...)`를 사용하여 복사
+
+```js
+const user = {
+  name: "kong",
+  age: 24,
+  location: "한국",
+};
+
+const clone = Object.assign({}, user);
+```
+
+> 하지만 이렇게 복사하는 방식의 문제는 객체내에 객체를 참조하는 값이 있으면 그것은 참조값을 복사하는게 된다
+
+```js
+let user = {
+  name: "kong",
+  body: {
+    weight: "88kg",
+    height: "180cm",
+  },
+};
+
+let clone = Object.assign({}, user);
+
+console.log(user.sizes === clone.sizes); // true, 같은 객체
+```
