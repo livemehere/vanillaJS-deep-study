@@ -1,13 +1,13 @@
-let animal = {
-  eats: true,
-};
+class Button {
+  constructor(value) {
+    this.value = value;
+  }
 
-function Rabbit(name) {
-  this.name = name;
+  click() {
+    console.log(this.value);
+  }
 }
 
-// Rabbit.__proto__ = animal;
-Rabbit.prototype = animal;
-let rabbit = new Rabbit("kong");
+let button = new Button("hello");
 
-console.log(rabbit.eats);
+setTimeout(button.click, 1000); // undefined
