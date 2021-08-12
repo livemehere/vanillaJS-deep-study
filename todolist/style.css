@@ -1,22 +1,23 @@
-ul,
-li {
-  list-style: none;
-  padding: 0;
-}
-
-.items {
+.todo-list {
   width: 200px;
 }
-
-.items li {
-  display: flex;
-  justify-content: space-between;
+body {
+  background-color: #101820;
+  color: #f2aa4c;
+}
+.btn {
+  height: 32px;
+  line-height: 20px;
+  margin-bottom: 3px;
+}
+input {
+  background-color: inherit;
+  border: none;
+  color: white;
 }
 
-.container {
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.wrap {
+  width: 400px;
+  border: beige solid 3px;
+  border-radius: 10px;
 }

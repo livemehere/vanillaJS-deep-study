@@ -1,5 +1,5 @@
 const items = document.querySelector(".items");
-const addBtn = document.querySelector(".add-btn");
+const inputBox = document.querySelector(".input-box");
 const inputItem = document.querySelector(".input-item");
 
 // TODO: Initialization
@@ -16,19 +16,11 @@ items.addEventListener("click", (e) => {
 });
 
 // TODO: Create new item event Click or Enter key
-addBtn.addEventListener("click", () => {
+inputBox.addEventListener("submit", (e) => {
+  e.preventDefault();
   if (inputItem.value != "") {
     createTodo(inputItem.value);
     pushItemsIntoLS();
-  }
-});
-
-inputItem.addEventListener("keypress", (e) => {
-  if (e.keyCode === 13) {
-    if (inputItem.value != "") {
-      createTodo(inputItem.value);
-      pushItemsIntoLS();
-    }
   }
 });
 
@@ -57,9 +49,9 @@ function createTodo(itemText) {
   const span = document.createElement("span");
   const button = document.createElement("button");
 
-  li.classList = "item";
+  li.classList = "item d-flex justify-content-between";
   span.classList = "text";
-  button.classList = "remove-btn";
+  button.classList = "remove-btn btn btn-outline-secondary";
 
   span.innerHTML = itemText;
   button.innerHTML = "삭제";

@@ -1,13 +1,16 @@
-class Button {
-  constructor(value) {
-    this.value = value;
-  }
+this.name = "global";
 
-  click() {
-    console.log(this.value);
-  }
-}
+let user = {
+  name: "kong",
+  age: 24,
+  say: () => {
+    console.log(this);
+  },
+  hi() {
+    console.log(this.name);
+  },
+};
 
-let button = new Button("hello");
-
-setTimeout(button.click, 1000); // undefined
+user.say();
+user.hi();
+console.log(this);

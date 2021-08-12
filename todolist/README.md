@@ -9,3 +9,7 @@
 - 우선 목적이 스스로 해보고, 리팩토링하는 것이었기 때문에 결과물에 만족한다!
 
 [결과물보기](https://livemehere.github.io/vanillaJS-deep-study/todolist/index.html)
+
+# ISSUE 참고 리팩토링
+
+- form 의사용과 submit 사용 (enter동작)
